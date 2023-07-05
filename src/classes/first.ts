@@ -1,6 +1,6 @@
 export class First {
-    firstName: string;
-    lastName: string;
+    protected firstName: string;
+    protected lastName: string;
 
 
     constructor(_firstName: string, _lastName: string) {

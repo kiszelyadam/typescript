@@ -1,8 +1,9 @@
 import { First } from "./first";
+import { ThirdClass } from "./third";
 
-export class Second extends First {
+export class Second extends ThirdClass  {
 
-    constructor() {
+    /* constructor() {
         super('Teszt', 'Név');
     }
 
@@ -12,5 +13,9 @@ export class Second extends First {
 
     override testFunction(): void {
         console.log('IDE2');
+    } */
+
+    override thirdClassFunction(): void {
+        console.log('implemented third class');
     }
 }

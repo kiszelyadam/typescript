@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { First } from 'src/classes/first';
 import { Second } from 'src/classes/second';
+import { TestType } from 'src/interfaces/test.defitions';
 
 interface Test {
   firstName: string;
@@ -39,6 +40,10 @@ export class AppComponent implements OnInit {
   ourTuple?: [number, boolean, string];
 
   unionVariable?: string | number;
+
+  howManyWheels?: Record<string, number>;
+
+  omitType?: Omit<TestType, 'address'>;
 
 
   object = {
@@ -121,12 +126,26 @@ export class AppComponent implements OnInit {
 
     const secondClass = new Second();
 
-    console.log(secondClass.asd + ' ' + secondClass.asd2);
+    secondClass.thirdClassFunction();
+
+    /* console.log(secondClass.asd + ' ' + secondClass.asd2);
 
     console.log(firstClass.firstName);
 
-    secondClass.testFunction();
+    secondClass.testFunction(); */
 
+
+    this.howManyWheels = {
+      'bus': 8,
+      'car': 4,
+      'motor': 2
+    }
+
+    this.omitType = {
+      age: 10,
+      firstName: 'Teszt',
+      lastName: 'Ádám'
+    }
   }
 
 
